@@ -1,0 +1,107 @@
+{
+  "name": "dsh-voice-weld",
+  "description": "Streaming dictation for DeepSeek Harness: DashScope streaming ASR with context hotwords, spoken-to-written polish, live draft updates. | 流式听写插件：百炼流式识别 + 上下文词表 + 口语转书面 + 实时上屏。",
+  "version": "0.2.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./invariant": {
+      "types": "./lib/types/invariant.d.ts",
+      "default": "./lib/invariant.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-renderer"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "prepublishOnly": "node build.mjs",
+    "test": "vitest run"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "clsx": "^2.0.0",
+    "ws": "^8.21.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-agent": "0.0.1-rc.5 || >=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-client-locale": "0.0.1-rc.5 || >=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-client-runtime": "0.0.1-rc.5 || >=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-conversation": "0.0.1-rc.5 || >=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-primitives": "0.0.1-rc.5 || >=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-settings": "0.0.1-rc.5 || >=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-slots": "0.0.1-rc.5 || >=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-host-webserver": "0.0.1-rc.5 || >=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-invariants": "0.0.1-rc.5 || >=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-session": "0.0.1-rc.5 || >=0.2.0-rc.2 <0.3.0-0",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.5",
+    "@deepseek-ai/dsh-agent": "0.0.1-rc.5",
+    "@deepseek-ai/dsh-client-locale": "0.0.1-rc.5",
+    "@deepseek-ai/dsh-client-runtime": "0.0.1-rc.5",
+    "@deepseek-ai/dsh-client-ui-conversation": "0.0.1-rc.5",
+    "@deepseek-ai/dsh-client-ui-primitives": "0.0.1-rc.5",
+    "@deepseek-ai/dsh-client-ui-settings": "0.0.1-rc.5",
+    "@deepseek-ai/dsh-client-ui-slots": "0.0.1-rc.5",
+    "@deepseek-ai/dsh-host-webserver": "0.0.1-rc.5",
+    "@deepseek-ai/dsh-invariants": "0.0.1-rc.5",
+    "@deepseek-ai/dsh-scope": "0.0.1-rc.5",
+    "@deepseek-ai/dsh-session": "0.0.1-rc.5",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^22.15.0",
+    "@types/react": "~18.3.18",
+    "@types/react-dom": "~18.3.5",
+    "@types/ws": "^8.18.1",
+    "esbuild": "^0.25.10",
+    "jsdom": "^26.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.9.3",
+    "vitest": "3.2.4"
+  },
+  "files": [
+    "lib",
+    "src",
+    "cordis.patch.yml",
+    "HANDOVER.md"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "voice",
+    "asr",
+    "dashscope",
+    "polish",
+    "plugin"
+  ]
+}
+

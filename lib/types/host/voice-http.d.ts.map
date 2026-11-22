@@ -1,0 +1,1 @@
+{"version":3,"file":"voice-http.d.ts","sourceRoot":"","sources":["../../../src/host/voice-http.ts"],"names":[],"mappings":"AAeA,OAAO,KAAK,EAAE,OAAO,EAAE,MAAM,qBAAqB,CAAA;AAkClD,MAAM,WAAW,gBAAgB;IAC/B,MAAM,EAAE,MAAM,CAAA;IACd,WAAW,CAAC,EAAE,MAAM,CAAA;CACrB;AAsBD,wBAAgB,iBAAiB,CAAC,GAAG,EAAE,OAAO,EAAE,OAAO,EAAE,gBAAgB,GAAG,IAAI,CA+F/E"}

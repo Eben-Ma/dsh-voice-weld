@@ -1,0 +1,4 @@
+# dsh-voice-weld bundle: host /voice engine (DashScope streaming ASR + polish) + client dictation UI.
+- insert:
+    - id: voice-weld
+      name: 'dsh-voice-weld'
